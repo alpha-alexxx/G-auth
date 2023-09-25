@@ -31,7 +31,7 @@ export default function CopyCard() {
 			if (authCode !== 'There is no code to copy!') {
 				setIsCopying(true);
 				setBtnBasedOnAuthCode(true);
-				await navigator.clipboard.writeText(authCode);
+				await navigator.clipboard.writeText(`/auth ${authCode}`);
 				setNotificationData({
 					title: 'Code Copied Successfully',
 					message:
@@ -69,7 +69,7 @@ export default function CopyCard() {
 						: null;
 				}, 2000);
 			}, 2000);
-		}, 2000);
+		}, 1500);
 	};
 
 	return (
